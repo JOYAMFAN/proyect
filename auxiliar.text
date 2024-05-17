@@ -1,0 +1,65 @@
+<?php 
+    include("conectar_bd.php");
+   
+
+    $sql="SELECT *  FROM preficha";
+    $query=mysqli_query($conexion,$sql);
+
+    if (!$query) {
+        die("Error en la consulta: " . mysqli_error($conexion));
+    }
+
+    $row=mysqli_fetch_array($query);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <body style="background-color:CornflowerBlue">
+        <title>PRE-FICHA</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        
+    </head>
+    <body>
+            <div class="container mt-3">
+                    <div class="input-wrapper"> 
+                        
+                        <div class="col-md-5">
+                            <h1>Ingrese los datos solicitados</h1>
+                                <form action="datos2.php" method="POST">
+                                    <br>
+                                <input type="text" class="form-control mb-3" name="NONMBRE(S)_DEL_ASPIRANTE" required  placeholder="Nombre(s) del Aspirante">
+                                <input type="text" class="form-control mb-3" name="PRIMER_APELLIDO" required placeholder="Primer Apellido">
+                                <input type="text" class="form-control mb-3" name="SEGUNDO_APELLIDO" require placeholder="Segundo Apellido">
+                                <input type="text" class="form-control mb-3" name="CURP" require placeholder="CURP">
+                                <div style="height:38px; margin-bottom:16px;background-color:#03618d">
+                                    <span>¿Tienes beca?</span>
+                                <input type="checkbox" name="BECA" >
+                                </div>
+                                <input type="text" class="form-control mb-3" name="EDAD" require placeholder="EDAD">
+                                Sexo: 
+                                <select name="SEXO"  required placeholder="">
+                                 <option value="">Seleccione</option>
+                                 <option value="masculino">Masculino</option>
+                                 <option value="femenino">Femenino</option>
+                                 <option vaue="prefiero_no_decirlo">Prefiero no decirlo</option>
+                                 </select><br>
+                                <input type="text" class="form-control mb-3" name="ESCUELA_SECUNDARIA_DE_PROCEDENCIA" require placeholder="Escuela Secundaria de Procedencia">
+                                <input type="text" class="form-control mb-3" name="CICLO_ESCOLAR_DE_EGRESO" require placeholder="Ciclo Escolar de Procedencia(solo si aplica)">
+                                <input type="text" class="form-control mb-3" name="ENTIDAD_DE_PROCEDENCIA" require placeholder="Entidad de Procedencia">
+                                <input type="text" class="form-control mb-3" name="NACIONALIDAD" require placeholder="Nacionalidad">
+                                <input type="text" class="form-control mb-3" name="PLAN_DE_ESTUDIOS" require placeholder="Plan de Estudios">
+                                <input type="submit" class="btn btn-primary" value="Enviar"><a href="datos2.php?">
+                                </form>
+                        </div>
+                      
+                        
+                    </div> 
+            </div>
+            </div>
+    </body>
+
+</html>
