@@ -174,8 +174,8 @@ p{
 /* ----------------- Contenido Main ----------- */
 
 /* --------------- Titulo ---------------- */
-.hero{
-    background: url('../assets/logo_blanco_negro.png ');
+.hero {
+    background: url('../assets/logo_blanco_negro.png') no-repeat center center;
     background-size: cover;
     height: 70vh;
     display: flex;
