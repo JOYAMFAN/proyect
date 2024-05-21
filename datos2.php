@@ -1,7 +1,6 @@
 <?php
 
 include("conectar_bd.php");
-echo var_dump($_POST);
 $NOMBRE_DEL_ASPIRANTE = mysqli_real_escape_string($conexion, $_POST['NOMBRE']);
 $APELLIDO_PATERNO = mysqli_real_escape_string($conexion, $_POST['APELLIDO_PATERNO']);
 $APELLIDO_MATERNO = mysqli_real_escape_string($conexion, $_POST['APELLIDO_MATERNO']);
