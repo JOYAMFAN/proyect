@@ -1,22 +1,9 @@
-<?php 
-    include("conectar_bd.php");
-   
-
-    $sql="SELECT *  FROM usuarios";
-    $query=mysqli_query($conexion,$sql);
-
-    if (!$query) {
-        die("Error en la consulta: " . mysqli_error($conexion));
-    }
-
-    $row=mysqli_fetch_array($query);
-?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -61,7 +48,7 @@
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <form action="/login" method="post">
+        <form action="valuelogin.php" method="post">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" required>
             <label for="password">Password</label>
