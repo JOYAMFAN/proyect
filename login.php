@@ -1,3 +1,11 @@
+<?php
+session_start();
+ if(!empty($_SESSION))
+ {
+ header("location: registros.php");
+    exit;
+ }
+?>
 <!DOCTYPE html>
 <html >
 <head>
@@ -49,12 +57,12 @@
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <form action="/login" method="post">
+        <form action="./valuelogin.php" method="post">
             <label for="username">Username</label>
-            <input type="text" id="username" name="username" required>
+            <input type="text" name="username" required>
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
-            <input type="submit" value="Login"><a href="valuelogin.php?">
+            <input type="password"  name="password" required>
+            <input type="submit" value="Login">
         </form>
     </div>
 </body>
